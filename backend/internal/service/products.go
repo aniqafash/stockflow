@@ -37,7 +37,7 @@ func (s *ProductService) List(ctx context.Context, search string, pageRequest dt
 
 	res, err := s.productRepo.List(ctx, search, page)
 	if err != nil {
-		return nil, err
+		return nil, dto.ErrLookUp
 	}
 
 	var products = make([]dto.Product, 0, len(res))
