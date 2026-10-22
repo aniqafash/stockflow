@@ -18,7 +18,7 @@ func (r *ProductRepository) List(ctx context.Context, search string, page entity
 	const query = `
 		SELECT id, sku, name, price, stock, is_active, created_at, last_movement_at
 		FROM products p
-		WHERE name ILIKE $1
+		WHERE $1::text = '' OR name ILIKE $1
 		ORDER BY created_at
 		LIMIT $2 OFFSET $3`
 	var offset = (page.Page - 1) * page.Limit
