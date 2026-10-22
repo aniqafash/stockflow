@@ -12,3 +12,8 @@ type Product struct {
 	CreatedAt      time.Time `json:"created_at"`
 	LastMovementAt time.Time `json:"last_movement_at"`
 }
+
+type ProductListRequest struct {
+	Page
+	Search string `form:"search"`
+}
