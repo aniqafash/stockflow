@@ -1,9 +1,10 @@
-import './App.css'
+import { RouterProvider } from 'react-router/dom'
+import { router } from './routes/router'
 
-function App() {
+export function App() {
   return (
     <>
-      <section id="center"></section>
+      <RouterProvider router={router} />
     </>
   )
 }
