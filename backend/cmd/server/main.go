@@ -9,15 +9,9 @@ import (
 	"stockflow/internal/repository"
 	"stockflow/internal/route"
 	"stockflow/internal/service"
-
-	"github.com/joho/godotenv"
 )
 
 func main() {
-	if err := godotenv.Load(); err != nil {
-		log.Fatalf("failed to load .env file: %v", err)
-	}
-
 	cfg, err := config.Load()
 	if err != nil {
 		log.Fatal(err)
