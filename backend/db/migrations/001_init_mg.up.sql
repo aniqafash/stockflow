@@ -6,7 +6,7 @@ CREATE TABLE products (
     -- IDR, integer: no float money
     stock INTEGER NOT NULL DEFAULT 0 CHECK (stock >= 0),
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
     last_movement_at TIMESTAMPTZ 
 );
 
