@@ -25,6 +25,6 @@ func (p *Product) ToResponseType() dto.Product {
 		Stock:          p.Stock,
 		IsActive:       p.IsActive,
 		CreatedAt:      p.CreatedAt,
-		LastMovementAt: *p.LastMovementAt,
+		LastMovementAt: p.LastMovementAt,
 	}
 }
