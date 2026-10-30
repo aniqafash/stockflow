@@ -6,6 +6,7 @@ import (
 	"stockflow/internal/entity"
 )
 
+//go:generate mockgen -source=products.go -destination=products_repo_mock.go -package=service
 type ProductRepository interface {
 	List(ctx context.Context, search string, page entity.Page) ([]entity.Product, error)
 }
