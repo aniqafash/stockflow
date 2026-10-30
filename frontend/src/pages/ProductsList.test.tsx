@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 import { ProductsList } from './ProductsList'
 import useSWR from 'swr'
-import type { Product } from '../types/product'
+
 vi.mock('swr')
 const mockUseSWR = vi.mocked(useSWR)
 
@@ -43,12 +43,12 @@ describe('Products List Page', () => {
         error: undefined,
         mutate: vi.fn(),
         isValidating: false,
-      }
+      },
     } as any)
 
     render(<ProductsList />)
 
-    const productCards = screen.getAllByRole("article")
+    const productCards = screen.getAllByRole('article')
     expect(productCards.length).toBe(3)
     expect(screen.getAllByText(/Inactive/i).length).toBe(1)
     expect(screen.getAllByText(/^Active/i).length).toBe(2)
