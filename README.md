@@ -52,6 +52,19 @@ docker compose down -v
 ```
 Stopping the app in a different terminal
 
+## Testing
+Backend:
+```
+cd backend/
+go test ./... -v
+```
+
+Frontend:
+```
+cd frontend/
+npm run test
+```
+
 ## Design Choices
 1. Maintain last_movement_at in the row of products table: use Transaction when updating stock in order to not use additional JOIN query every time we want to access product's data. The JOIN query could be problematic later if the data size becomes big and full row scan is done to only get the most recent data (in the case index has not been implemented yet).
 2. Use CORS middleware to communicate between backend and frontend.
