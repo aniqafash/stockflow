@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+//go:generate mockgen -source=products.go -destination=products_service_mock.go -package=handler
 type ProductService interface {
 	List(ctx context.Context, search string, pageRequest dto.Page) ([]dto.Product, error)
 }
