@@ -51,10 +51,7 @@ async function send<T>(
     message?: string
     meta?: { errorCode?: string }
   } | null
-  throw new ApiError(
-    res.status,
-    fail?.message ?? 'Something went wrong'
-  )
+  throw new ApiError(res.status, fail?.message ?? 'Something went wrong')
 }
 
 export async function apiRequest<T>(
